@@ -5,9 +5,9 @@ umask 000
 
 # R --args "$1"
 Rscript --vanilla /bound/ctm_translation.R "${1:-1234}" && \
-  Rscript --vanilla pacta_01.R "/bound/working_dir/params.json" && \
-  Rscript --vanilla pacta_02.R "/bound/working_dir/params.json" && \
-  Rscript --vanilla pacta_03.R "/bound/working_dir/params.json" && \
+  Rscript --vanilla /pacta_01.R "/bound/working_dir/params.json" && \
+  Rscript --vanilla /pacta_02.R "/bound/working_dir/params.json" && \
+  Rscript --vanilla /pacta_03.R "/bound/working_dir/params.json" && \
   cp -r /bound/working_dir/40_Results/report /bound/working_dir/50_Outputs && \
   cp -r /bound/working_dir/40_Results/executive_summary /bound/working_dir/50_Outputs && \
   echo "Done!"

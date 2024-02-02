@@ -1,3 +1,4 @@
+logger::log_info("Translating params to CTM format")
 portfolio_name <- commandArgs(trailingOnly = TRUE)
 
 working_dir <- file.path("/", "bound", "working_dir")
@@ -13,6 +14,7 @@ portfolio_file <- file.path(
   paste0(portfolio_name, ".csv")
 )
 
+logger::log_info("Reading portfolio parameters")
 if (file.exists(params_file)) {
   raw_portfolio_params <- config::get(file = params_file)[["parameters"]]
 } else {
@@ -25,6 +27,7 @@ imported_params[["language_select"]] <- imported_params[["language"]]
 
 default_params <- jsonlite::fromJSON("/default_config.json")
 
+logger::log_info("Merging default and imported parameters")
 params <- config::merge(default_params, raw_portfolio_params)
 
 if (params[["holdings_date"]] == "2022Q4") {
@@ -40,7 +43,9 @@ if (params[["project_code"]] != "GENERAL") {
 params[["portfolio_path"]] <- portfolio_file
 params[["output_dir"]] <- file.path(working_dir, "40_Results")
 
+logger::log_info("Writing parameters to file")
 writeLines(
   jsonlite::toJSON(params, pretty = TRUE, auto_unbox = TRUE),
   con = file.path(working_dir, "params.json")
 )
+logger::log_info("Done translating params to CTM format")
