@@ -70,7 +70,8 @@ COPY DESCRIPTION /DESCRIPTION
 #   pak::pak(c(gh_pkgs, workflow_pkgs)); \
 #   "
 
-COPY . /
+COPY bound/ /bound/
+COPY default_config.json /default_config.json
 
 # set default run behavior
 ENTRYPOINT [""]
