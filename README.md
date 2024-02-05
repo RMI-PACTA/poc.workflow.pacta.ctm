@@ -1,6 +1,8 @@
-# poc.workflow.pacta.ctm
+# (Archived) poc.workflow.pacta.ctm
 
-[![Project Status: Concept – Minimal or no implementation has been done yet, or the repository is only intended to be a limited example, demo, or proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
+**This project has been archived, as a proof of concept that worked in theory, but the team decided to take an alternate path.**
+
+[![Project Status: Abandoned – Initial development has started, but there has not yet been a stable, usable release; the project has been abandoned and the author(s) do not intend on continuing development.](https://www.repostatus.org/badges/latest/abandoned.svg)](https://www.repostatus.org/#abandoned)
 
 **This repo is a Proof of concept**.
 
